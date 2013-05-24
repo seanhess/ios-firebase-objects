@@ -33,6 +33,8 @@
 		78A0D68E175009CB001D2661 /* FirebaseConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseConnection.h; sourceTree = "<group>"; };
 		78A0D68F175009CB001D2661 /* FirebaseConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseConnection.m; sourceTree = "<group>"; };
 		78A0D690175009CB001D2661 /* Objectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Objectable.h; sourceTree = "<group>"; };
+		78A0D6BF175011CE001D2661 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
+		78A0D6C0175011CE001D2661 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,8 @@
 		78A0D672175009BA001D2661 = {
 			isa = PBXGroup;
 			children = (
+				78A0D6BF175011CE001D2661 /* LICENSE.md */,
+				78A0D6C0175011CE001D2661 /* README.md */,
 				78A0D680175009BA001D2661 /* FirebaseObjects */,
 				78A0D67D175009BA001D2661 /* Frameworks */,
 				78A0D67C175009BA001D2661 /* Products */,
