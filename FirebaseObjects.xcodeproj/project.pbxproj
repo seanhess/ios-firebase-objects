@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		78A0D67F175009BA001D2661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A0D67E175009BA001D2661 /* Foundation.framework */; };
-		78A0D684175009BA001D2661 /* FirebaseObjects.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78A0D683175009BA001D2661 /* FirebaseObjects.h */; };
-		78A0D686175009BA001D2661 /* FirebaseObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D685175009BA001D2661 /* FirebaseObjects.m */; };
+		78A0D691175009CB001D2661 /* FirebaseCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D68D175009CB001D2661 /* FirebaseCollection.m */; };
+		78A0D692175009CB001D2661 /* FirebaseConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D68F175009CB001D2661 /* FirebaseConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,7 +19,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				78A0D684175009BA001D2661 /* FirebaseObjects.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -29,8 +28,11 @@
 		78A0D67B175009BA001D2661 /* libFirebaseObjects.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFirebaseObjects.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A0D67E175009BA001D2661 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78A0D682175009BA001D2661 /* FirebaseObjects-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirebaseObjects-Prefix.pch"; sourceTree = "<group>"; };
-		78A0D683175009BA001D2661 /* FirebaseObjects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseObjects.h; sourceTree = "<group>"; };
-		78A0D685175009BA001D2661 /* FirebaseObjects.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseObjects.m; sourceTree = "<group>"; };
+		78A0D68C175009CB001D2661 /* FirebaseCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseCollection.h; sourceTree = "<group>"; };
+		78A0D68D175009CB001D2661 /* FirebaseCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseCollection.m; sourceTree = "<group>"; };
+		78A0D68E175009CB001D2661 /* FirebaseConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseConnection.h; sourceTree = "<group>"; };
+		78A0D68F175009CB001D2661 /* FirebaseConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseConnection.m; sourceTree = "<group>"; };
+		78A0D690175009CB001D2661 /* Objectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Objectable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +75,11 @@
 		78A0D680175009BA001D2661 /* FirebaseObjects */ = {
 			isa = PBXGroup;
 			children = (
-				78A0D683175009BA001D2661 /* FirebaseObjects.h */,
-				78A0D685175009BA001D2661 /* FirebaseObjects.m */,
+				78A0D68C175009CB001D2661 /* FirebaseCollection.h */,
+				78A0D68D175009CB001D2661 /* FirebaseCollection.m */,
+				78A0D68E175009CB001D2661 /* FirebaseConnection.h */,
+				78A0D68F175009CB001D2661 /* FirebaseConnection.m */,
+				78A0D690175009CB001D2661 /* Objectable.h */,
 				78A0D681175009BA001D2661 /* Supporting Files */,
 			);
 			path = FirebaseObjects;
@@ -139,7 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78A0D686175009BA001D2661 /* FirebaseObjects.m in Sources */,
+				78A0D691175009CB001D2661 /* FirebaseCollection.m in Sources */,
+				78A0D692175009CB001D2661 /* FirebaseConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
