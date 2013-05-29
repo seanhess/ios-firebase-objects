@@ -39,7 +39,7 @@
         
         // find the correct object and update locally
         [self.node observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-            id obj = [self.objects objectForKey:snapshot.name];
+            id<Objectable> obj = [self.objects objectForKey:snapshot.name];
             if (!obj) {
                 // add the object to the collection if it doesn't exist yet
                 obj = factory(snapshot.value);
@@ -51,14 +51,14 @@
         }];
         
         [self.node observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
-            id obj = [self.objects objectForKey:snapshot.name];
+            id<Objectable> obj = [self.objects objectForKey:snapshot.name];
             if (!obj) return;
             [self.objects removeObjectForKey:snapshot.name];
             self.removeCb(obj);
         }];
         
         [self.node observeEventType:FEventTypeChildChanged withBlock:^(FDataSnapshot *snapshot) {
-            id obj = [self.objects objectForKey:snapshot.name];
+            id<Objectable> obj = [self.objects objectForKey:snapshot.name];
             if (!obj) {
                 NSAssert(false, @"Object not found locally! %@", snapshot.name);
             }
@@ -82,22 +82,29 @@
 }
 
 - (void)removeObject:(id<Objectable>)object {
-    NSString * name = [self.names objectForKey:object];
-    Firebase * objnode = [self.node childByAppendingPath:name];
-    [objnode removeValue];
+    [[self nodeForObject:object] removeValue];
 }
 
 - (void)addObject:(id<Objectable>)obj {
-    [self addObject:obj withNode:[self.node childByAutoId]];
+    [self addObject:obj onComplete:nil];
 }
 
 - (void)addObject:(id<Objectable>)obj withName:(NSString *)name {
-    [self addObject:obj withNode:[self.node childByAppendingPath:name]];
+    [self addObject:obj withName:name onComplete:nil];
 }
 
-- (void)addObject:(id<Objectable>)obj withNode:(Firebase*)objnode {
+- (void)addObject:(id<Objectable>)obj onComplete:(void (^)(NSError*))cb {
+    [self addObject:obj withNode:[self.node childByAutoId] onComplete:cb];
+}
+
+- (void)addObject:(id<Objectable>)obj withName:(NSString *)name onComplete:(void (^)(NSError*))cb {
+    [self addObject:obj withNode:[self.node childByAppendingPath:name] onComplete:cb];
+}
+
+- (void)addObject:(id<Objectable>)obj withNode:(Firebase*)objnode onComplete:(void(^)(NSError*))cb {
+//    if (!cb) cb = ^(NSError*error) {};
     [objnode onDisconnectRemoveValue];
-    [objnode setValue:obj.toObject];
+    [objnode setValue:obj.toObject withCompletionBlock:cb];
     [self addObjectLocally:obj name:objnode.name];
 }
 
@@ -109,6 +116,16 @@
 - (void)removeObjectLocally:(id)obj name:(NSString*)name {
     [self.names removeObjectForKey:obj];
     [self.objects removeObjectForKey:name];
+}
+
+- (void)updateObject:(id<Objectable>)obj {
+    [[self nodeForObject:obj] setValue:obj.toObject];
+}
+
+- (Firebase*)nodeForObject:(id<Objectable>)obj {
+    NSString * name = [self.names objectForKey:obj];
+    Firebase* objnode = [self.node childByAppendingPath:name];
+    return objnode;
 }
 
 - (void)dealloc {
