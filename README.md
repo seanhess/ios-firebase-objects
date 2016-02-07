@@ -15,7 +15,7 @@ FirebaseCollection: Keep a Dictionary in sync with a firebase
     }];
     
     User * me = [User new];
-    me.name = @"me";
+    me.key = @"me";
     [self.collection addObject:me];
     
 ### What if I want to run a table view?
@@ -43,7 +43,7 @@ Firebase calls `setValuesForKeysWithDictionary` internally to set values on your
 Your class (`User` in this example) should implement the `Objectable` protocol so `FirebaseCollection` knows how to convert it into a dictionary.
 
     -(NSDictionary*)toObject {
-        return [self dictionaryWithValuesForKeys:@[@"name"]];
+        return [self dictionaryWithValuesForKeys:@[@"key"]];
     }
     
 ### Adding, Removing and Updating all handled for you
@@ -55,7 +55,7 @@ Use `didAddChild`, `didRemoveChild` and `didUpdateChild` to be notified when the
 FirebaseConnection: be notified when connection changes
 -------------------------------------------------------
 
-    self.connection = [[FirebaseConnection alloc] initWithFirebaseName:@"myfirebasename" onConnect:^{
+    self.connection = [[FirebaseConnection alloc] initWithFirebasekey:@"myfirebasekey" onConnect:^{
         [self connectToLobby];
     } onDisconnect:^{
         [self showDiconnectedScreen];

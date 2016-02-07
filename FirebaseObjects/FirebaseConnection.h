@@ -12,5 +12,5 @@
 
 @interface FirebaseConnection : NSObject
 @property (nonatomic) BOOL connected;
--(id)initWithFirebaseName:(NSString*)name onConnect:(void(^)(void))onConnect onDisconnect:(void(^)(void))onDisconnect;
+-(id)initWithFirebasekey:(NSString*)key onConnect:(void(^)(void))onConnect onDisconnect:(void(^)(void))onDisconnect;
 @end
