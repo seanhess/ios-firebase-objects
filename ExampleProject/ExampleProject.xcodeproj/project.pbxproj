@@ -12,9 +12,9 @@
 		1594C0BB1C66C7F500DFF9AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1594C0B91C66C7F500DFF9AF /* Main.storyboard */; };
 		1594C0BD1C66C7F500DFF9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1594C0BC1C66C7F500DFF9AF /* Assets.xcassets */; };
 		1594C0C01C66C7F500DFF9AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1594C0BE1C66C7F500DFF9AF /* LaunchScreen.storyboard */; };
-		1594C0C81C66C83000DFF9AF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1594C0C71C66C83000DFF9AF /* Podfile */; };
 		1594C0CF1C66CA3800DFF9AF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1594C0CE1C66CA3800DFF9AF /* User.m */; };
 		1594C0D31C66CFFC00DFF9AF /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1594C0D21C66CFFC00DFF9AF /* UserListViewController.m */; };
+		1594C0D71C66EAC800DFF9AF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1594C0D61C66EAC800DFF9AF /* Podfile */; };
 		5B11B765241B3DA3F3D5E070 /* Pods_ExampleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C23A88731FE0605D7B9726 /* Pods_ExampleProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,11 +27,11 @@
 		1594C0BC1C66C7F500DFF9AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1594C0BF1C66C7F500DFF9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1594C0C11C66C7F500DFF9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1594C0C71C66C83000DFF9AF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		1594C0CD1C66CA3800DFF9AF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		1594C0CE1C66CA3800DFF9AF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		1594C0D11C66CFFC00DFF9AF /* UserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListViewController.h; sourceTree = "<group>"; };
 		1594C0D21C66CFFC00DFF9AF /* UserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListViewController.m; sourceTree = "<group>"; };
+		1594C0D61C66EAC800DFF9AF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		78C23A88731FE0605D7B9726 /* Pods_ExampleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9739C14B7013D443DF98A457 /* Pods-ExampleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleProject/Pods-ExampleProject.debug.xcconfig"; sourceTree = "<group>"; };
 		AFFCBF163D031A23B4654391 /* Pods-ExampleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleProject/Pods-ExampleProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		1594C0A41C66C7F500DFF9AF = {
 			isa = PBXGroup;
 			children = (
-				1594C0C71C66C83000DFF9AF /* Podfile */,
+				1594C0D61C66EAC800DFF9AF /* Podfile */,
 				1594C0AF1C66C7F500DFF9AF /* ExampleProject */,
 				1594C0AE1C66C7F500DFF9AF /* Products */,
 				CBE68AA06669C32C7C4395AE /* Pods */,
@@ -189,7 +189,7 @@
 			files = (
 				1594C0C01C66C7F500DFF9AF /* LaunchScreen.storyboard in Resources */,
 				1594C0BD1C66C7F500DFF9AF /* Assets.xcassets in Resources */,
-				1594C0C81C66C83000DFF9AF /* Podfile in Resources */,
+				1594C0D71C66EAC800DFF9AF /* Podfile in Resources */,
 				1594C0BB1C66C7F500DFF9AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

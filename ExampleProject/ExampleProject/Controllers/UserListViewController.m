@@ -65,7 +65,7 @@
 
 //TableView - UITableViewDataSource and UITableViewDelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-  NSInteger count = [[_dictionary allKeys] count];
+  NSInteger count = [[_dictionary allValues] count];
   return ((count == 0) ?  1 : count);
 }
 
@@ -79,16 +79,18 @@
   }
   
   if([[_dictionary allKeys] count] == 0){
+    
     cell.textLabel.text = @"NO REGISTRED USERS";
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.textLabel.textColor = [UIColor lightGrayColor];
     
   }else{
-    NSString * key = [[_dictionary allKeys] objectAtIndex:indexPath.row];
-    User * user = [_dictionary objectForKey:key];
+    
+    User * user = [[_dictionary allValues] objectAtIndex:indexPath.row];
     cell.textLabel.text = user.name;
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
     cell.textLabel.textColor = [UIColor blackColor];
+    
   }
   
   return cell;
@@ -106,10 +108,9 @@
 
 -(NSInteger)indexOfUser:(User *) user{
   
-  for(NSString * key in [_dictionary allKeys]){
-    User * currentUser = [_dictionary objectForKey:key];
+  for(User * currentUser in [_dictionary allValues]){
     if([currentUser isEqual:user]){
-      return [[_dictionary allKeys] indexOfObject: key];
+      return [[_dictionary allValues] indexOfObject: currentUser];
     }
   }
   
