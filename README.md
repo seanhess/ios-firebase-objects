@@ -60,3 +60,15 @@ FirebaseConnection: be notified when connection changes
     } onDisconnect:^{
         [self showDiconnectedScreen];
     }];
+    
+ExampleProject: Run the example project to see it in action!
+-------------------------------------------------------
+Open the `ExampleProject` directory and create a `podfile` like follows:
+
+    platform :ios, '8.0'
+    use_frameworks!
+    target "ExampleProject" do
+     pod 'FirebaseObjects', :path => '../'
+    end
+
+Run `pod install`command. Open `ExampleProject.xcworkspace` and run the project.
