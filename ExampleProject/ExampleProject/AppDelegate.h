@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  ExampleProject
 //
-//  Created by Sean Hess on 5/24/13.
-//  Copyright (c) 2013 Sean Hess. All rights reserved.
+//  Created by Felipe Antonio Cardoso on 06/02/16.
+//  Copyright © 2016 ExampleProject. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,3 +13,4 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @end
+

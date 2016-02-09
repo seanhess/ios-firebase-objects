@@ -16,11 +16,11 @@
 
 @implementation FirebaseConnection
 
--(id)initWithFirebaseName:(NSString *)name onConnect:(void (^)(void))onConnect onDisconnect:(void (^)(void))onDisconnect {
+-(id)initWithFirebasekey:(NSString *)key onConnect:(void (^)(void))onConnect onDisconnect:(void (^)(void))onDisconnect {
     self = [super init];
     if (self) {
         self.connected = NO;
-        self.connectionNode = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://%@.firebaseio.com/.info/connected", name]];
+        self.connectionNode = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"https://%@.firebaseio.com/.info/connected", key]];
         
         [self.connectionNode observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
             BOOL wasConnected = self.connected;
